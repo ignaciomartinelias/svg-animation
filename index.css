@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-image: url(/assets/background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.glass {
+  display: grid;
+  place-items: center;
+  padding: 100px;
+  max-width: 80%;
+  box-sizing: border-box;
+  backdrop-filter: blur(0px);
+  border-radius: 6px;
+  animation: glass 1s forwards ease-in-out;
+  animation-delay: 4.5s;
+}
+
+svg {
+  width: 100%;
+}
+
+path {
+  stroke: white;
+  fill: white;
+  fill-opacity: 0;
+  stroke-width: 2px;
+  animation: draw 2s ease-in-out forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+@keyframes glass {
+  to {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+@media screen and (max-width: 768px) {
+  .glass {
+    padding: 50px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .glass {
+    padding: 20px;
+  }
+}
